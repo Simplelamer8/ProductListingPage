@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductCard = ({ product_id }: { product_id: string }) => {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   const cart = useSelector((state: any) => state.header.cart);
   const quantity = cart[product_id] || 0;
   const [isDisabled, setIsDisabled] = useState(false);
