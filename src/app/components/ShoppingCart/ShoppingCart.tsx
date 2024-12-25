@@ -1,9 +1,9 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Product, Cart } from "../../types/types";
+import { Cart, TempProduct } from "../../types/types";
 import { Button } from "@/components/ui/button";
 
 type ShoppingCartProps = {
-  products: Product[];
+  products: TempProduct[];
   cart: Cart;
   total: number;
 };
