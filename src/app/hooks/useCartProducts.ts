@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Product, Cart } from "../types/types";
+import { Cart, TempProduct } from "../types/types";
 
 export const useCartProducts = (cart: Cart) => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<TempProduct[]>([]);
 
   useEffect(() => {
-    const fetchProduct = async (id: string): Promise<Product> => {
+    const fetchProduct = async (id: string): Promise<TempProduct> => {
       const response = await axios.get(`https://dummyjson.com/products/${id}`);
       return {
         title: response.data.title,
@@ -21,7 +21,7 @@ export const useCartProducts = (cart: Cart) => {
         return;
       }
 
-      const fetchedProducts:Product[] = await Promise.all(
+      const fetchedProducts:TempProduct[] = await Promise.all(
         Object.keys(cart).map((id) => fetchProduct(id))
       );
       setProducts(fetchedProducts);
