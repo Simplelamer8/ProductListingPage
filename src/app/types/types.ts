@@ -42,6 +42,11 @@ export type ProductCardProps = {
     product: Product;
 };
 
+export type TempProduct = {
+  id: string;
+  title: string;
+  price: number;
+}
 
 export type Cart = {
     [key: string]: number;
