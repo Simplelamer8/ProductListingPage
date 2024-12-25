@@ -26,7 +26,7 @@ const headerSlice = createSlice({
         },
         updateCart: (state, action) => {
             const { product_id, quantity }: Record<string, number> = action.payload;
-            let new_cart = {
+            const new_cart = {
                 ...state.cart, // Create a new object with existing cart entries
                 [product_id]: quantity > 0 ? quantity : 0, // Add or update product quantity
             };
