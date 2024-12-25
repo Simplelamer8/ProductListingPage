@@ -13,7 +13,7 @@ import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
 
 
 export default function Header() {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   const searchText = useSelector((state: {header: headerInterface}) => state.header.searchText);
   const filterValue = useSelector((state: {header: headerInterface}) => state.header.filterValue);
   const cart = useSelector((state: {header: headerInterface}) => state.header.cart);
