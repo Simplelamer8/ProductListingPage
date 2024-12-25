@@ -1,11 +1,11 @@
-import { updateCart } from "@/redux/slices/headerSlice";
+import { headerInterface, updateCart } from "@/redux/slices/headerSlice";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductCard = ({ product_id }: { product_id: string }) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state: any) => state.header.cart);
+  const cart = useSelector((state: {header: headerInterface}) => state.header.cart);
   const quantity = cart[product_id] || 0;
   const [isDisabled, setIsDisabled] = useState(false);
 
